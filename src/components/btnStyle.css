@@ -1,0 +1,27 @@
+.btn{
+    border-radius: 0.5rem;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.btn__edit{
+    background: #067406;
+}
+.btn__delete{
+    background: #b11515;
+}
+.create__btn{
+    background: #7a8180;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;    
+}
+.submit__btn{
+    background: #1a5b7e;
+}

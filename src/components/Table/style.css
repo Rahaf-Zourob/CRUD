@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+table thead th {
+    color: #fff;
+    background: #164422;
+    padding: 10px 15px;
+    text-align: left;
+}
+table tbody td {
+    padding: 0.8rem;
+    text-align: left;
+    vertical-align: middle;
+    border-top: 0.1rem solid #f0f0f0;
+    cursor: pointer;
+}
