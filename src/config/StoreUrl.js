@@ -1,1 +1,1 @@
-export const StoreUrl= 'https://some-data.onrender.com/stores'
+export const ApiUrl= process.env.REACT_APP_API_URL
