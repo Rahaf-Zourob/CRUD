@@ -1,16 +1,20 @@
 import { useEffect } from "react";
-import Table from "../../components/Table/indes";
-import { User } from "../../constants/User";
 import { useNavigate } from "react-router-dom";
 import { Paths } from "../../Router/Paths";
-import '../../components/btnStyle.css'
 import useApi from "../../components/hook/useApi";
+
+import Table from "../../components/Table/indes";
+import { User } from "../../constants/User";
+import Container from "../../components/Container";
+
+import '../../components/btnStyle.css'
+
 export default function ViewPage() {
-  const { deleteData, data, getData } = useApi();
+  const { deleteData, data, getData, loading } = useApi();
   const navigate = useNavigate();
   useEffect(() => {
     getData();
-  }, []);
+  }, [data]);
 
   const handleCreate = () => {
     navigate(Paths.User.Create);
@@ -29,11 +33,15 @@ export default function ViewPage() {
       <button className=" create__btn btn" onClick={handleCreate}>
         Add user
       </button>
-      <Table
-        data={data}
-        cols={User(handleDelete, handleEdit)}
-        onRowClick={handleRead}
-      />
+      {loading ? <Container><h3>Loading...</h3></Container> :
+        <>
+          <Table
+            data={data}
+            cols={User(handleDelete, handleEdit)}
+            onRowClick={handleRead}
+          />
+        </>
+      }
     </>
   );
 }

@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
+
 import { form } from '../../constants/form'
+
+import './style.css'
+
 const Form = (props) => {
   const [user, setUser] = useState({
     name: '',
@@ -24,20 +28,20 @@ const Form = (props) => {
   }, [props.user]);
   const handleChangeInput = (e) => {
     const { value, id } = e.target;
-    setUser(prevState => ({ ...prevState, [id]: value}));
+    setUser(prevState => ({ ...prevState, [id]: value }));
   };
   return (
     <form onSubmit={handleSubmit}>
       {form.map((input) => (
         <div className='form__field' key={input.id}>
           <label htmlFor={input.id}>{input.label}</label>
-            <input
-              type={input.type}
-              id={input.id}
-              name={input.name}
-              value={user[input.id]}
-              onChange={handleChangeInput}
-            />
+          <input
+            type={input.type}
+            id={input.id}
+            name={input.name}
+            value={user[input.id]}
+            onChange={handleChangeInput}
+          />
         </div>
       ))}
       <button type='submit' className='btn submit__btn'>{props.isLoading ? 'Loading...' : 'Submit'}</button>

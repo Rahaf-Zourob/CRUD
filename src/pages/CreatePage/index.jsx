@@ -1,21 +1,25 @@
-import Container from '../../components/Container';
-import Form from '../../components/Form';
 import { useNavigate } from 'react-router-dom';
 import { Paths } from '../../Router/Paths';
 import useApi from '../../components/hook/useApi';
-export default function CreatePost () {
-  const {loading,postData} = useApi()
+
+import Container from '../../components/Container';
+import Form from '../../components/Form';
+import BackLink from '../../components/BackLink'
+
+export default function CreatePost() {
+  const { loading, postData } = useApi()
   const navagaite = useNavigate()
-  const handleCreatePost = (body)=>{
+  const handleCreatePost = (body) => {
     postData(body)
     navagaite(Paths.User.View)
   }
   return (
-        <Container>
-          <h1>Create User</h1>
-          <Form
-            handleSubmit={handleCreatePost}
-            loading={loading}/>
-        </Container>
+    <Container>
+      <h1>Add User</h1>
+      <Form
+        handleSubmit={handleCreatePost}
+        loading={loading} />
+      <BackLink />
+    </Container>
   )
 }
