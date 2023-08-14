@@ -4,12 +4,14 @@ table {
     border-radius: 0.5rem;
     overflow: hidden;
 }
+
 table thead th {
     color: #fff;
     background: #164422;
     padding: 10px 15px;
     text-align: left;
 }
+
 table tbody td {
     padding: 0.8rem;
     text-align: left;
