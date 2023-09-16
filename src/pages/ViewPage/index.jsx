@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Paths } from "../../Router/Paths";
-import useApi from "../../components/hook/useApi";
+import useApi from "../../hook/useApi";
 
 import Table from "../../components/Table/indes";
 import { User } from "../../constants/User";
@@ -14,7 +14,7 @@ export default function ViewPage() {
   const navigate = useNavigate();
   useEffect(() => {
     getData();
-  }, [data]);
+  }, []);
 
   const handleCreate = () => {
     navigate(Paths.User.Create);

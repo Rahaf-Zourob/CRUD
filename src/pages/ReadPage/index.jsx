@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Paths } from '../../Router/Paths';
 import Container from '../../components/Container';
-import useApi from '../../components/hook/useApi';
+import useApi from '../../hook/useApi';
 export default function ReadPage() {
   const { getObject, object, loading } = useApi()
   useEffect(() => {
